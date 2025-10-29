@@ -17,7 +17,7 @@ function App() {
       try { 
         const symbols = ['AAPL,MSFT,GOOGL,AMZN,NVDA,META,TSLA,JPM,DIS,KOM'];
         const response = await fetch(
-          `https://api.marketstack.com/v1/eod/latest?access_key=${API_KEY}&symbols=${symbols}`
+          `https://api.marketstack.com/v1/eod/latest?key=${API_KEY}&symbols=${symbols}`
         );
         const data = await response.json();
         const stockList = data.data.map((s) => ({
