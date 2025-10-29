@@ -1,22 +1,26 @@
 import {useEffect, useState } from 'react'
-import axios from 'axios'
+import axios from "axios"
 import StockRow from './Components/StockRow'
 import Filters from "./Components/Filters"
 import SummaryStats from "./Components/SummaryStats"
-import './App.css'
+import './App.css' 
 
-const API_KEY = import.meta.env.VITE_API_KEY
+const API_KEY = import.meta.env.VITE_APP_API_KEY
 function App() {
-  const [list, setlist] = useState(null)
+  const [list, setList] = useState(null)
+  const [filteredResults, setFilteredResults] = useState([])
+  const [searchInput, setSearchInput] = useState("")
+  const [exchangeFilter, setExchangeFilter] = useState("")
 
   useEffect(() => {
     const fetchStockData = async () => {
       try { 
         const symbols = ['AAPL,MSFT,GOOGL,AMZN,NVDA,META,TSLA,JPM,DIS,KOM'];
-        const responses = await axios.get(
-          `http://api.marketstack.com/v2/eod?key=${API_KEY}&symbols=${symbol}`
-        )
-        const stockList = response.data.data.map((s) => ({
+        const response = await fetch(
+          `https://api.marketstack.com/v1/eod/latest?access_key=${API_KEY}&symbols=${symbols}`
+        );
+        const data = await response.json();
+        const stockList = data.data.map((s) => ({
           symbol: s.symbol,
           exchange: s.exchange,
           close: s.close,
@@ -25,10 +29,10 @@ function App() {
           low: s.low,
           volume: s.volume,
           change: ((s.close - s.open) / s.open) * 100,
-        }))
+        }));
+        setList(stockList);
+        setFilteredResults(stockList);
 
-        setlist(stockList)
-        setFilteredResults(stockList)
       }catch (error) {
         console.error('Error fetching stock data:', error)
       }
