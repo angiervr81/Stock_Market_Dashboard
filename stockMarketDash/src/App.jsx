@@ -1,5 +1,5 @@
 import {useEffect, useState } from 'react'
-import axios from "axios"
+
 import StockRow from './Components/StockRow'
 import Filters from "./Components/Filters"
 import SummaryStats from "./Components/SummaryStats"
@@ -15,10 +15,12 @@ function App() {
   useEffect(() => {
     const fetchStockData = async () => {
       try { 
-        const symbols = ['AAPL,MSFT,GOOGL,AMZN,NVDA,META,TSLA,JPM,DIS,KOM'];
-        const response = await fetch(
-          `https://api.marketstack.com/v1/eod/latest?key=${API_KEY}&symbols=${symbols}`
-        );
+          const symbols = "AAPL,MSFT,GOOGL,AMZN,NVDA,META,TSLA,JPM,DIS,KO";
+
+          const response = await fetch(
+            `https://api.marketstack.com/v1/eod/latest?access_key=${API_KEY}&symbols=${symbols}`
+          );
+
         const data = await response.json();
         const stockList = data.data.map((s) => ({
           symbol: s.symbol,
@@ -44,9 +46,10 @@ function App() {
   useEffect(() => {
     if(!list) return
 
-    let results = list.filter((item) => {
-      item.symbol.toLowerCase().includes(searchInput.toLowerCase())
-    })
+    let results = list.filter((item) =>
+        item.symbol.toLowerCase().includes(searchInput.toLowerCase())
+  );
+
 
     if(exchangeFilter) {
       results = results.filter(
