@@ -57,11 +57,11 @@
   margin-bottom: 1.5rem;
 }
 .card {
-  background: rgb(12, 0, 0);
+  background: rgba(1, 2, 0, 0.336);
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgb(0, 0, 0);
-  color: var(--text-primary);
+  color: rgb(23, 23, 129);
 }
 
 .filters{
@@ -84,22 +84,22 @@
 
 .stock-table th,
 .stock-table td {
-  border: 1px solid rgba(9, 107, 30, 0.726);
+  border: 1px solid rgba(246, 247, 246, 0.274);
   padding: 0.75rem;
 }
 
 
 .stock-table th {
-  background: var(--color-accent);
+  background:rgb(3, 87, 28);
   color: white;
 }
 
 .arrow-up {
-  color: var(--color-green);
+  color: green;
   font-weight: bold;
 }
 
 .arrow-down {
-  color: var(--color-red);
+  color: red;
   font-weight: bold;
 }
