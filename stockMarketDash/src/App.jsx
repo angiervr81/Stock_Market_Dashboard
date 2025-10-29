@@ -1,5 +1,4 @@
 import {useEffect, useState } from 'react'
-
 import StockRow from './Components/StockRow'
 import Filters from "./Components/Filters"
 import SummaryStats from "./Components/SummaryStats"
@@ -22,6 +21,7 @@ function App() {
           );
 
         const data = await response.json();
+        
         const stockList = data.data.map((s) => ({
           symbol: s.symbol,
           exchange: s.exchange,
