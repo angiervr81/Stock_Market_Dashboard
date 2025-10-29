@@ -57,17 +57,6 @@ Design & Styling:
 - VS Code — Code editor used
 
 ## Notes
-Got it! Here’s a polished version of your **Notes** section, corrected for grammar, clarity, and readability, while keeping the three bullet points included:
-
----
-
-## Notes
-
-Absolutely! Here's a **clean, non-repetitive, bullet-point version** of your Notes section:
-
----
-
-## Notes
 
 Challenges and key implementation details:
 
