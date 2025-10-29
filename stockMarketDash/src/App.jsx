@@ -1,5 +1,8 @@
 import {useEffect, useState } from 'react'
 import axios from 'axios'
+import StockRow from './Components/StockRow'
+import Filters from "./Components/Filters"
+import SummaryStats from "./Components/SummaryStats"
 import './App.css'
 
 const API_KEY = import.meta.env.VITE_API_KEY
