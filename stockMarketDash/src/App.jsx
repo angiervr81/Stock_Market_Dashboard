@@ -66,7 +66,10 @@ function App() {
   return (
     <div className='whole-page'>
       <NavBar/>
-      <h1>Stock Market Dashboard</h1>
+      <h1 style={{ color: '#138138ff', fontSize: '3rem', fontWeight: '600' }}>
+        Stock Market Dashboard
+      </h1>
+
         <Filters
           searchInput={searchInput}
           setSearchInput={setSearchInput}
