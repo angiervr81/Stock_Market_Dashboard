@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import "./NavBar.css";
+import './NavBar.css'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
