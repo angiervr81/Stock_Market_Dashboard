@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import "./NavBar.css";
 
-function NavBar(){
-    return (
-        <nav className="navbar">
-            <h2 className="logo">📈 Stock Dashboard</h2>
-            <ul className="nav-links">
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-    );
+function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <nav className="navbar">
+      <div className="logo">📊 MarketView</div>
+
+        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+
+
+      
+      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#list">Stocks</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  );
 }
 
-export default NavBar;
+export default Navbar;
