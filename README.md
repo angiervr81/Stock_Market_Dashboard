@@ -40,7 +40,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='./WKWk6_Project5_Dashboard.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./WK6_Project5 _Dashboard.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with ...  
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -57,13 +57,36 @@ Design & Styling:
 - VS Code — Code editor used
 
 ## Notes
+Got it! Here’s a polished version of your **Notes** section, corrected for grammar, clarity, and readability, while keeping the three bullet points included:
 
-Describe any challenges encountered while building the app.
+---
 
+## Notes
+
+Absolutely! Here's a **clean, non-repetitive, bullet-point version** of your Notes section:
+
+---
+
+## Notes
+
+Challenges and key implementation details:
+
+* Fetching data from multiple APIs and ensuring it updates dynamically.
+* Styling the dashboard with a cohesive color palette and modern, responsive design.
+* Creating a dropdown/hamburger navigation menu and handling responsive behavior.
+* Ensuring stock price changes dynamically update colors to reflect gains or losses.
+* Implementing accurate summary statistics that respond correctly to filtered data.
+
+
+ Coming Soon: 
+
+ - Adding logos for each company 
+ - Adding more details for each company
+ - Style update
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2025] [Angie Rivera]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
