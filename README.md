@@ -82,10 +82,8 @@ Design & Styling:
 Challenges and key implementation details:
 
 * Fetching data from multiple APIs and ensuring it updates dynamically.
-* Styling the dashboard with a cohesive color palette and modern, responsive design.
-* Creating a dropdown/hamburger navigation menu and handling responsive behavior.
-* Ensuring stock price changes dynamically update colors to reflect gains or losses.
-* Implementing accurate summary statistics that respond correctly to filtered data.
+* Styling the dashboard and detail links with a cohesive color palette and modern, responsive design.
+* Creating visualiztions and getting a responsive design
 
 
  Coming Soon: 
