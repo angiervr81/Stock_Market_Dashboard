@@ -20,7 +20,7 @@ The following **required** functionality is completed:
 - [X] **The app includes at least two unique charts developed using the fetched data that tell an interesting story**
   - At least two charts should be incorporated into the dashboard view of the site
   - Each chart should describe a different aspect of the dataset
-  - 
+    
 The following **optional** features are implemented:
 
 - [X] The site’s customized dashboard contains more content that explains what is interesting about the data 
