@@ -89,7 +89,6 @@ Challenges and key implementation details:
  Coming Soon: 
 
  - Adding logos for each company 
- - Adding more details for each company
  - Style update
 
 ## License
