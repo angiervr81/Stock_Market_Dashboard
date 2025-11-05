@@ -1,107 +1,52 @@
-import {useEffect, useState } from 'react'
-import StockRow from './Components/StockRow'
-import Filters from "./Components/Filters"
-import SummaryStats from "./Components/SummaryStats"
-import NavBar from "./Components/NavBar"
-import './App.css' 
+// App.jsx
+import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import StockRow from "./Components/StockRow";
+import Filters from "./Components/Filters";
+import SummaryStats from "./Components/SummaryStats";
+import NavBar from "./Components/NavBar";
+import StockDetail from "./Components/StockDetail";
+import Dashboard from "./Components/Dashboard";
+import "./App.css";
 
-const API_KEY = import.meta.env.VITE_APP_API_KEY
 function App() {
-  const [list, setList] = useState(null)
-  const [filteredResults, setFilteredResults] = useState([])
-  const [searchInput, setSearchInput] = useState("")
-  const [exchangeFilter, setExchangeFilter] = useState("")
+  const [list, setList] = useState([]);
 
   useEffect(() => {
     const fetchStockData = async () => {
-      try { 
-          const symbols = "AAPL,MSFT,GOOGL,AMZN,NVDA,META,TSLA,JPM,DIS,KO";
+      const API_KEY = import.meta.env.VITE_APP_API_KEY;
+      const symbols = "AAPL,MSFT,GOOGL,AMZN,NVDA,META,TSLA,JPM,DIS,KO";
+      const response = await fetch(
+        `https://api.marketstack.com/v1/eod/latest?access_key=${API_KEY}&symbols=${symbols}`
+      );
+      const data = await response.json();
 
-          const response = await fetch(
-            `https://api.marketstack.com/v1/eod/latest?access_key=${API_KEY}&symbols=${symbols}`
-          );
+      const stockList = data.data.map((s) => ({
+        symbol: s.symbol,
+        exchange: s.exchange,
+        close: s.close,
+        open: s.open,
+        high: s.high,
+        low: s.low,
+        volume: s.volume,
+        change: ((s.close - s.open) / s.open) * 100,
+      }));
 
-        const data = await response.json();
+      setList(stockList);
+    };
 
-        const stockList = data.data.map((s) => ({
-          symbol: s.symbol,
-          exchange: s.exchange,
-          close: s.close,
-          open: s.open,
-          high: s.high,
-          low: s.low,
-          volume: s.volume,
-          change: ((s.close - s.open) / s.open) * 100,
-        }));
-        setList(stockList);
-        setFilteredResults(stockList);
-
-      }catch (error) {
-        console.error('Error fetching stock data:', error)
-      }
-    }
-
-    fetchStockData().catch(console.error)
-  }, [])
-
-  useEffect(() => {
-    if(!list) return
-
-    let results = list.filter((item) =>
-        item.symbol.toLowerCase().includes(searchInput.toLowerCase())
-  );
-
-
-    if(exchangeFilter) {
-      results = results.filter(
-        (item) => 
-          item.exchange &&
-          item.exchange.toLowerCase().includes(exchangeFilter.toLowerCase())
-      )
-    }
-
-    setFilteredResults(results)
-  }, [searchInput, exchangeFilter, list])
+    fetchStockData().catch(console.error);
+  }, []);
 
   return (
-    <div className='whole-page'>
-      <NavBar/>
-      <h1 style={{ color: '#138138ff', fontSize: '3rem', fontWeight: '600' }}>
-        Stock Market Dashboard
-      </h1>
-
-        <Filters
-          searchInput={searchInput}
-          setSearchInput={setSearchInput}
-          exchangeFilter={exchangeFilter}
-          setExchangeFilter={setExchangeFilter}
-        />
-        <SummaryStats stocks={filteredResults} />
-
-        <table className='stock-table'>
-          <thead>
-            <tr>
-              <th>Symbol</th>
-              <th>Price</th>
-              <th>Change</th>
-              <th>Volume</th>
-              <th>Exchange</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredResults?.length > 0 ? (
-              filteredResults.map((stock) => (
-                <StockRow key={stock.symbol} stock={stock} />
-              ))
-            ) : (
-              <tr>
-                <td colSpan='5'>No stocks found.</td>
-              </tr>
-            )}
-          </tbody>  
-        </table>
+    <div className="whole-page">
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Dashboard list={list} />} />
+        <Route path="/stock/:symbol" element={<StockDetail />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
