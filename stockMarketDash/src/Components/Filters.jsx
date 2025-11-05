@@ -10,7 +10,7 @@ function Filters({
     <div className="filters">
       <input
         type="text"
-        placeholder="Search by symbol..."
+        placeholder="Search..."
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
       />
