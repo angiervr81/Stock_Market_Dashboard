@@ -7,7 +7,7 @@ This web app: **This web app: displays stock market data in a user friendly dash
 Time spent: **5** hours spent in total
 
 ## Required Features
-PART 2: 
+# PART 2: 
 The following **required** functionality is completed:
 
 - [X] **Clicking on an item in the list view displays more details about it**
@@ -28,7 +28,7 @@ The following **optional** features are implemented:
 - [X] The site allows users to toggle between different data visualizations
   - User should be able to use some mechanism to toggle between displaying and hiding visualizations 
 
-PART 1: Completed 10/28/25
+# PART 1: Completed 10/28/25
 The following **required** functionality is completed:
 
 - [X] **The site has a dashboard displaying a list of data fetched using an API call**
