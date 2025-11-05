@@ -1,13 +1,34 @@
-# Web Development Project 5 - *Stock Market Dashboard*
+# Web Development Project 6 - *Stock Market Dashboard*
 
 Submitted by: **Angie Rivera**
 
 This web app: **This web app: displays stock market data in a user friendly dashoard, allowing users to search, filter, and analyze stocks with a summary statistics.**
 
-Time spent: **7** hours spent in total
+Time spent: **5** hours spent in total
 
 ## Required Features
+PART 2: 
+The following **required** functionality is completed:
 
+- [X] **Clicking on an item in the list view displays more details about it**
+  - Clicking on an item in the dashboard list navigates to a detail view for that item
+  - Detail view includes extra information about the item not included in the dashboard view
+  - The same sidebar is displayed in detail view as in dashboard view
+  - *To ensure an accurate grade, your sidebar **must** be viewable when showing the details view in your recording.*
+- [X] **Each detail view of an item has a direct, unique URL link to that item’s detail view page**
+  -  *To ensure an accurate grade, the URL/address bar of your web browser **must** be viewable in your recording.*
+- [X] **The app includes at least two unique charts developed using the fetched data that tell an interesting story**
+  - At least two charts should be incorporated into the dashboard view of the site
+  - Each chart should describe a different aspect of the dataset
+  - 
+The following **optional** features are implemented:
+
+- [X] The site’s customized dashboard contains more content that explains what is interesting about the data 
+  - e.g., an additional description, graph annotation, suggestion for which filters to use, or an additional page that explains more about the data
+- [X] The site allows users to toggle between different data visualizations
+  - User should be able to use some mechanism to toggle between displaying and hiding visualizations 
+
+PART 1: Completed 10/28/25
 The following **required** functionality is completed:
 
 - [X] **The site has a dashboard displaying a list of data fetched using an API call**
@@ -40,7 +61,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='./WK6_Project5 _Dashboard.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./WK7_Project6 _Dashboard_PT2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with ...  
 [ScreenToGif](https://www.screentogif.com/) for Windows
